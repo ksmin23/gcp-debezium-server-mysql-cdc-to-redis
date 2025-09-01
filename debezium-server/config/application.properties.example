@@ -1,0 +1,25 @@
+debezium.sink.type=redis
+debezium.sink.redis.address=redis_host:6379
+debezium.sink.redis.memory.threshold.percentage=0
+
+debezium.source.offset.storage=io.debezium.server.redis.RedisOffsetBackingStore
+debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisSchemaHistory
+debezium.source.schema.history.internal.redis.address=redis_host:6379
+
+debezium.source.connector.class=io.debezium.connector.mysql.MySqlConnector
+debezium.source.database.hostname=<your-mysql-private-ip> # Example: 10.1.0.2
+debezium.source.database.port=3306
+debezium.source.database.user=datastream
+debezium.source.database.password=<your-database-user-password> # Example: StrongPassword123!
+debezium.source.database.dbname=<your-database-name> # Example: testdb
+# debezium.source.database.ssl.mode=required
+debezium.source.database.server.id=<a-unique-numeric-id> # Example: 12345
+debezium.source.database.server.name=<a-logical-server-name> # This is used as the topic prefix. Example: mysql-prod-01
+debezium.source.topic.prefix=<your-topic-prefix> # Example: tutorial
+
+# Quarkus
+quarkus.log.level=INFO
+quarkus.log.console.json=false
+# Uncomment to change Debezium port from 8080 [default] to any other port
+# quarkus.http.port=8980
+# quarkus.log.file.enable=true
