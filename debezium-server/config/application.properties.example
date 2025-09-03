@@ -3,6 +3,7 @@ debezium.sink.redis.address=redis_host:6379
 debezium.sink.redis.memory.threshold.percentage=0
 
 debezium.source.offset.storage=io.debezium.server.redis.RedisOffsetBackingStore
+debezium.source.offset.storage.redis.address=redis_host:6379
 debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisSchemaHistory
 debezium.source.schema.history.internal.redis.address=redis_host:6379
 
